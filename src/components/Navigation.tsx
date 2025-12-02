@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navigation = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -8,9 +10,9 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 px-[5%] py-6 flex justify-between items-center z-50 backdrop-blur-md bg-navy-blue/30 border-b border-sky-cyan/10">
-      <div className="font-orbitron text-2xl md:text-3xl font-black tracking-wider gradient-text">
+      <Link to="/" className="font-orbitron text-2xl md:text-3xl font-black tracking-wider gradient-text">
         TECHIT
-      </div>
+      </Link>
       <ul className="flex gap-6 md:gap-12 list-none">
         <li>
           <button
@@ -19,6 +21,14 @@ const Navigation = () => {
           >
             Services
           </button>
+        </li>
+        <li>
+          <Link
+            to="/about"
+            className="nav-link text-foreground/90 hover:text-foreground"
+          >
+            About
+          </Link>
         </li>
         <li>
           <button
