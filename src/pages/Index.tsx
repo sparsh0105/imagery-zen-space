@@ -1,12 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import GridBackground from '@/components/GridBackground';
+import Particles from '@/components/Particles';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import ServicesSection from '@/components/ServicesSection';
+import FooterCTA from '@/components/FooterCTA';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Update document title
+    document.title = 'TechIt - Reality Reimagined';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'TechIt builds immersive VR, AR, and software experiences that transcend the physical world. Explore our cutting-edge solutions for the future of interaction.');
+    }
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen">
+      <GridBackground />
+      <Particles />
+      <Navigation />
+      
+      <main>
+        <HeroSection />
+        <ServicesSection />
+        <FooterCTA />
+      </main>
+      
+      <Footer />
     </div>
   );
 };
