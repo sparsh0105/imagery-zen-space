@@ -13,12 +13,21 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
+        syne: ['Syne', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        slate: "hsl(var(--slate))",
+        "navy-blue": "hsl(var(--navy-blue))",
+        "deep-blue": "hsl(var(--deep-blue))",
+        "neon-pink": "hsl(var(--neon-pink))",
+        "sky-cyan": "hsl(var(--sky-cyan))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -65,25 +74,50 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        pulse: {
+          "0%, 100%": {
+            transform: "translate(-50%, -50%) scale(1)",
+            opacity: "0.1",
           },
-          to: {
-            height: "0",
+          "50%": {
+            transform: "translate(-50%, -50%) scale(1.2)",
+            opacity: "0.3",
           },
+        },
+        float: {
+          "0%, 100%": {
+            opacity: "0",
+            transform: "translateY(100vh) scale(0)",
+          },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": {
+            transform: "translateY(-100vh) scale(1)",
+          },
+        },
+        gradientShift: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        gridMove: {
+          "0%": { transform: "translateY(0) translateX(0)" },
+          "100%": { transform: "translateY(80px) translateX(80px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        pulse: "pulse 4s ease-in-out infinite",
+        float: "float 8s infinite",
+        "gradient-shift": "gradientShift 3s ease infinite",
+        "grid-move": "gridMove 20s linear infinite",
       },
     },
   },
