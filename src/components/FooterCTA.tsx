@@ -28,7 +28,7 @@ const FooterCTA = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.2 }}
-        href="mailto:hello@techit.com" 
+        href="mailto:ceo.techit.ind@gmail.com" 
         className="cta-button inline-block"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
